@@ -2,6 +2,5 @@
     "cmake.sourceDirectory": "${workspaceFolder}",
     "cmake.buildDirectory": "${workspaceFolder}/build",
     "cmake.configureOnOpen": true,
-    "cmake.generator": "Unix Makefiles",
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+    "cmake.generator": "Unix Makefiles"
 }

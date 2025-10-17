@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Create Project",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-DCOMMAND=create",
+                "-DPROJECT_NAME=${input:projectName}",
+                "-P",
+                "WorkspaceManager.cmake"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Remove Project", 
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-DCOMMAND=remove",
+                "-DPROJECT_NAME=${input:projectName}", 
+                "-P",
+                "WorkspaceManager.cmake"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "List Projects",
+            "type": "shell", 
+            "command": "cmake",
+            "args": ["-DCOMMAND=list", "-P", "WorkspaceManager.cmake"],
+            "group": "build"
+        },
+        {
+            "label": "Build All",
+            "type": "shell",
+            "command": "cmake", 
+            "args": ["-DCOMMAND=build", "-P", "WorkspaceManager.cmake"],
+            "group": "build"
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["-DCOMMAND=clean", "-P", "WorkspaceManager.cmake"],
+            "group": "build"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectName",
+            "type": "promptString",
+            "description": "Project name:"
+        }
+    ]
+}
