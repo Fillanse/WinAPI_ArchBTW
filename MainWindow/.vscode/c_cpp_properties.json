@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32 (MinGW cross)",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/x86_64-w64-mingw32/include",
+                "/usr/x86_64-w64-mingw32/include/c++"
+            ],
+            "defines": [
+                "_WIN32",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/x86_64-w64-mingw32-g++",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

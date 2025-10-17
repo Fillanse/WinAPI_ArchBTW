@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug WinAPI via MinGW gdb (Wine)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Calculator.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/x86_64-w64-mingw32/bin/gdb.exe",
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "wine",
+                "pipeArgs": [
+                    "/usr/x86_64-w64-mingw32/bin/gdb.exe",
+                    "--interpreter=mi2"
+                ],
+                "debuggerPath": "/usr/x86_64-w64-mingw32/bin/gdb.exe"
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing"
+                },
+                {
+                    "description": "Set Wine as exec wrapper",
+                    "text": "set exec-wrapper wine"
+                }
+            ],
+            "logging": {
+                "engineLogging": true
+            },
+            "externalConsole": false
+        }
+    ]
+}
